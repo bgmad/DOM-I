@@ -37,6 +37,85 @@ const siteContent = {
   },
 };
 
+
+
+print = toPrint => console.log(toPrint);
+
+
+
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
+
+//Container with every element on the page in it.
+const container = document.querySelector('.container');
+//Header and all of the elements inside of the header. 
+  const header = document.querySelector('header');
+    const nav = document.querySelector('nav');
+      const navLinks = document.querySelectorAll('nav a'); //as a nodelist not a real array
+      navLinks.forEach((link, i) => link.textContent = siteContent.nav['nav-item-' + (i + 1)]);
+    const headerLogo = document.querySelector('#logo-img');
+
+  //CTA section and all of the elements in it.
+  const cta = document.querySelector('.cta');
+    const ctaText = document.querySelector('.cta-text');
+      const ctaHeader = document.querySelector('.cta-text h1');
+      ctaHeader.textContent = siteContent.cta.h1;
+      const ctaButton = document.querySelector('.cta-text button');
+      ctaButton.textContent = siteContent.cta.button;
+    const ctaImg = document.querySelector('#cta-img');
+    ctaImg.setAttribute('src', siteContent.cta["img-src"])
+  
+  //Main content section and all of the elements in it.
+  const mainContent = document.querySelector('.main-content');
+    const topContent = document.querySelectorAll('.top-content'); //this is a nodelist not a real array
+      const firstTextContent = document.querySelector('.top-content .text-content:nth-of-type(1)');
+        const firstTopHeader = document.querySelector('.top-content .text-content:nth-of-type(1) h4');
+        firstTopHeader.textContent = siteContent['main-content']['features-h4'];
+        const firstTopParagraph = document.querySelector('.top-content .text-content:nth-of-type(1) p');
+        firstTopParagraph.textContent = siteContent['main-content']['features-content'];
+      const secondTextContent = document.querySelector('.top-content .text-content:nth-of-type(2)');
+        const secondTopHeader = document.querySelector('.top-content .text-content:nth-of-type(2) h4');
+        secondTopHeader.textContent = siteContent['main-content']['about-h4'];
+        const secondTopParagraph = document.querySelector('.top-content .text-content:nth-of-type(2) p');
+        secondTopParagraph.textContent = siteContent['main-content']['about-content'];
+
+    const middleImg = document.querySelector('#middle-img');
+    middleImg.setAttribute('src', siteContent['main-content']['middle-img-src']);
+
+    const bottomContent = document.querySelectorAll('.bottom-content'); //this is a nodelist not a real array
+      const firstBottomTextContent = document.querySelector('.bottom-content .text-content:nth-of-type(1)');
+        const firstBottomHeader = document.querySelector('.bottom-content .text-content:nth-of-type(1) h4');
+        firstBottomHeader.textContent = siteContent['main-content']['services-h4'];
+        const firstBottomParagraph = document.querySelector('.bottom-content .text-content:nth-of-type(1) p');
+        firstBottomParagraph.textContent = siteContent['main-content']['services-content'];
+      const secondBottomTextContent = document.querySelector('.bottom-content .text-content:nth-of-type(2)');
+        const secondBottomHeader = document.querySelector('.bottom-content .text-content:nth-of-type(2) h4');
+        secondBottomHeader.textContent = siteContent['main-content']['product-h4'];
+        const secondBottomParagraph = document.querySelector('.bottom-content .text-content:nth-of-type(2) p');
+        secondBottomParagraph.textContent = siteContent['main-content']['product-content'];
+      const thirdBottomTextContent = document.querySelector('.bottom-content .text-content:nth-of-type(3)');
+        const thirdBottomHeader = document.querySelector('.bottom-content .text-content:nth-of-type(3) h4');
+        thirdBottomHeader.textContent = siteContent['main-content']['vision-h4'];
+        const thirdBottomParagraph = document.querySelector('.bottom-content .text-content:nth-of-type(3) p');
+        thirdBottomHeader.textContent = siteContent['main-content']['vision-content'];
+
+  
+  //contact section
+  const contact = document.querySelector('.contact');
+  const contactHeader = document.querySelector('.contact h4');
+  contactHeader.textContent = siteContent.contact['contact-h4'];
+  const firstContactParagraph = document.querySelector('.contact p:nth-of-type(1)');
+  firstContactParagraph.textContent = siteContent.contact.address;
+  const secondContactParagraph = document.querySelector('.contact p:nth-of-type(2)');
+  secondContactParagraph.textContent = siteContent.contact.phone;
+  const thirdContactParagraph = document.querySelector('.contact p:nth-of-type(3)');
+  thirdContactParagraph.textContent = siteContent.contact.email;
+
+  //footer 
+  const footer = document.querySelector('footer');
+  const footerParagraph = document.querySelector('footer p');
+  footerParagraph.textContent = siteContent.footer.copyright;
+
+
+
