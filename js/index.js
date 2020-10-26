@@ -1,3 +1,4 @@
+let lightMode = true;
 const siteContent = {
   "nav": {
     "nav-item-0": "Home",
@@ -112,8 +113,49 @@ logo.setAttribute('src', siteContent["nav"]["img-src"]);
   thirdContactParagraph.textContent = siteContent.contact.email;
 
   //footer 
+  const button = document.createElement('button');
+  button.textContent = 'Night Mode';
+
+  button.style.border = '1px double black';
+  button.style.fontSize = '16px';
+  button.style.background = 'white';
+  button.style.width = '170px';
+  button.style.height = '32px';
+  button.style.marginTop = '10px';
+  button.style.cursor = 'pointer';
+  
+  const footer = document.querySelector('footer');
+  footer.appendChild(button);
+
+
   const footerParagraph = document.querySelector('footer p');
   footerParagraph.textContent = siteContent.footer.copyright;
 
+  button.addEventListener('click', () => {
+    if (lightMode) {
+      lightMode = false;
+      document.querySelector('body').style.background = 'black';
+      document.querySelector('body').style.color = 'white';
+    } else if (!lightMode){
+      lightMode = true;
+      document.querySelector('body').style.background = 'white';
+      document.querySelector('body').style.color = 'black';
+    }
+  })
+  
 
 
+//   .cta .cta-text button {
+//     border: 1px double black;
+//     font-size: 16px;
+//     background: white;
+//     width: 170px;
+//     height: 32px;
+//     margin-top: 10px;
+//     cursor: pointer;
+// }
+
+// .cta .cta-text button:hover {
+//     background: black;
+//     color: white;
+// }
